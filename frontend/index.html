@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedMatch AI - Home</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logos/logo_light.png" id="favicon">
+</head>
+
+<body>
+
+    <header class="app-header">
+        <div class="brand">
+            <img src="logos/logo_light.png" alt="MedMatch AI Logo" id="theme-logo">
+            <span class="brand-name">MedMatch AI</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="nav-link">History</a>
+            <a href="#" class="nav-link">Doctors</a>
+            <a href="#" class="nav-link">Pharmacies</a>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class='bx bx-moon'></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="upload-container">
+            <h1 class="upload-title">Analyze Your Medical Documents</h1>
+            <p class="upload-subtitle">Upload your reports, prescriptions, or scans to get started with MedMatch AI.</p>
+
+            <div class="upload-box" id="upload-box">
+                <i class='bx bx-cloud-upload upload-icon'></i>
+                <p>Drag and drop your files here</p>
+                <p class="upload-divider">or</p>
+                <button class="btn upload-btn">Browse Files</button>
+                <input type="file" id="file-input" multiple hidden>
+            </div>
+
+            <div class="upload-status" id="upload-status" style="display: none;">
+                <!-- Status of uploaded files will appear here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

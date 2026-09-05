@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedMatch AI - Authentication</title>
+    <link rel="icon" type="image/png" href="logos/logo_light.png" id="favicon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Styles -->
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="brand">
+            <img src="logos/logo_light.png" alt="MedMatch AI Logo" id="theme-logo">
+            <span class="brand-name">MedMatch AI</span>
+        </div>
+        <button class="theme-toggle" id="theme-toggle">
+            <i class='bx bx-moon'></i>
+        </button>
+    </header>
+
+    <div class="container">
+        <div class="form-box login">
+            <form action="#" id="login-form">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" id="login-username" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="forgot-link">
+                    <a href="#" id="show-forgot-btn">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p style="font-size: 12px; margin-top: 10px; opacity: 0.8;">Use <b>Admin</b> / <b>Admin@123</b> for testing</p>
+                <p>or login with social platforms</p>
+                <div class="social-icons">
+                    <a href="#" style="pointer-events: none; opacity: 0.5;" title="Currently disabled"><i class='bx bxl-google'></i></a>
+                </div>
+            </form>
+
+            <form action="#" id="forgot-form" style="display: none;">
+                <h1>Reset Password</h1>
+                <p style="margin-top: 10px; margin-bottom: 20px;">Enter your email to receive a verification link.</p>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <button type="submit" class="btn">Send Link</button>
+                <div class="forgot-link" style="margin-top: 20px;">
+                    <a href="#" id="back-to-login-btn"><i class='bx bx-arrow-back'></i> Back to Login</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <form action="#">
+                <h1>Registration</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p>or register with social platforms</p>
+                <div class="social-icons">
+                    <a href="#" style="pointer-events: none; opacity: 0.5;" title="Currently disabled"><i class='bx bxl-google'></i></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1>Hello, Welcome!</h1>
+                <p>Don't have an account?</p>
+                <button class="btn register-btn" type="button">Register</button>
+            </div>
+
+            <div class="toggle-panel toggle-right">
+                <h1>Welcome Back!</h1>
+                <p>Already have an account?</p>
+                <button class="btn login-btn" type="button">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
