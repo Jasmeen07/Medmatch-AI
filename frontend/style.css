@@ -16,7 +16,7 @@
   --text-color: #ffffff;
   --input-bg: #2c2c2c;
   --primary-color: #1ca478; /* Provided teal/green for dark mode */
-  --primary-gradient: linear-gradient(135deg, #147a59, #1ca478);
+  --primary-gradient: linear-gradient(135deg, #16949a, #1ca478);
   --btn-text: #ffffff;
   --border-color: #2a352a;
   --hover-bg: #242c24;
@@ -108,6 +108,11 @@ body {
   transform: scale(1.05);
   border-color: var(--primary-color);
   color: var(--primary-color);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 /* Main Content */

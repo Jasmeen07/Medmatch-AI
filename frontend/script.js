@@ -66,6 +66,15 @@ uploadBox.addEventListener('drop', (e) => {
     }
 });
 
+// Prevent default browser behavior if file is dropped outside the upload box
+window.addEventListener('dragover', (e) => {
+    e.preventDefault();
+});
+
+window.addEventListener('drop', (e) => {
+    e.preventDefault();
+});
+
 // Handle selected files
 fileInput.addEventListener('change', function() {
     if (this.files.length) {

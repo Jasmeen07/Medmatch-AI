@@ -18,8 +18,8 @@
   --input-bg: #2c2c2c;
   --input-text: #ffffff;
   --input-placeholder: #aaaaaa;
-  --primary-color: #1CA478; /* Provided teal color */
-  --primary-gradient: linear-gradient(90deg, #147a59, #1CA478);
+  --primary-color: #1CA478;
+  --primary-gradient: linear-gradient(90deg, #16949a, #1CA478);
   --btn-text: #ffffff;
   --social-border: #444444;
 }
@@ -94,6 +94,11 @@ body {
   transform: scale(1.05);
 }
 
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 /* Container & Forms */
 .container {
   position: relative;
@@ -122,6 +127,7 @@ body {
 
 form {
   width: 100%;
+  margin: auto 0;
 }
 
 .form-box {
@@ -131,12 +137,19 @@ form {
   height: 100%;
   background: var(--container-bg);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   color: var(--text-color);
   text-align: center;
   padding: 40px;
   z-index: 1;
   transition: 0.6s ease-in-out 1.2s, visibility 0s 1s, background 0.3s ease;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.form-box::-webkit-scrollbar {
+  display: none;
 }
 
 .container.active .form-box {
@@ -171,6 +184,11 @@ form {
 .input-box input::placeholder {
   color: var(--input-placeholder);
   font-weight: 400;
+}
+
+.input-box input:focus {
+  outline: 2px solid var(--primary-color);
+  background: var(--bg-color);
 }
 
 .input-box i {
@@ -215,6 +233,7 @@ form {
 
 .social-icons a {
   display: inline-flex;
+  position: relative;
   padding: 10px;
   border: 2px solid var(--social-border);
   border-radius: 8px;
@@ -222,6 +241,37 @@ form {
   color: var(--text-color);
   margin: 0 8px;
   transition: 0.3s ease;
+}
+
+.social-icons a[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 110%; /* Places it above */
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-color);
+  color: var(--container-bg);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.9;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.social-icons a[title]:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 95%; /* Little triangle pointing down */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--text-color) transparent transparent transparent;
+  pointer-events: none;
+  opacity: 0.9;
 }
 .social-icons a:hover {
   border-color: var(--primary-color);

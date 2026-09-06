@@ -26,7 +26,8 @@
             <a href="#" class="nav-link">History</a>
             <a href="#" class="nav-link">Doctors</a>
             <a href="#" class="nav-link">Pharmacies</a>
-            <button class="theme-toggle" id="theme-toggle">
+            <a href="auth.html" class="nav-link" style="color: #ff4d4d; font-weight: 600;" onclick="localStorage.removeItem('user');"><i class='bx bx-log-out'></i> Sign Out</a>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                 <i class='bx bx-moon'></i>
             </button>
         </nav>
@@ -42,7 +43,7 @@
                 <p>Drag and drop your files here</p>
                 <p class="upload-divider">or</p>
                 <button class="btn upload-btn">Browse Files</button>
-                <input type="file" id="file-input" multiple hidden>
+                <input type="file" id="file-input" accept=".pdf, image/png, image/jpeg" multiple hidden>
             </div>
 
             <div class="upload-status" id="upload-status" style="display: none;">
