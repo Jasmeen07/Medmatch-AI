@@ -1,1 +1,51 @@
-never-add-to-git/
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+build/
+.env*.local
+.vercel/
+*.tsbuildinfo
+
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+venv/
+env/
+.venv/
+.env
+.env.*
+
+# Supabase / Local
+.supabase/
+
+# IDE
+.vscode/
+.idea/
+
+# MedMatchAI specific
+.agents/
+skills-lock.json
+tests/
+
+# Root-level artefacts (not part of any package)
+/package.json
+/package-lock.json
