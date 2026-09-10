@@ -1,49 +1,38 @@
-:root {
-  --bg-color: #ffffff;
-  --container-bg: #ffffff;
-  --text-color: #333333;
-  --input-bg: #eeeeee;
-  --input-text: #333333;
-  --input-placeholder: #888888;
-  --primary-color: #ffca28; /* Yellow shade */
-  --primary-gradient: linear-gradient(135deg, #73b63e, #ffca28); /* Stronger green-to-yellow gradient */
-  --btn-text: #333333; /* Dark text on yellow for contrast */
-  --social-border: #cccccc;
-}
-
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --container-bg: #1e1e1e;
-  --text-color: #ffffff;
-  --input-bg: #2c2c2c;
-  --input-text: #ffffff;
-  --input-placeholder: #aaaaaa;
-  --primary-color: #1CA478;
-  --primary-gradient: linear-gradient(90deg, #16949a, #1CA478);
-  --btn-text: #ffffff;
-  --social-border: #444444;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  text-decoration: none;
-  list-style: none;
-}
-
-body {
+.auth-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: var(--bg-color);
+  background: var(--background);
   transition: background 0.3s ease;
+  font-family: inherit;
 }
 
-/* Header & Branding */
-.app-header {
+.auth-wrapper [data-theme="dark"] {
+  --container-bg: var(--surface);
+  --text-color: var(--foreground);
+  --input-bg: var(--surface-raised);
+  --input-text: var(--foreground);
+  --input-placeholder: var(--muted);
+  --primary-color: var(--brand-500);
+  --primary-gradient: linear-gradient(135deg, var(--brand-500), var(--accent-500));
+  --btn-text: #ffffff;
+  --social-border: var(--border);
+}
+
+.auth-wrapper {
+  --container-bg: var(--surface);
+  --text-color: var(--foreground);
+  --input-bg: var(--surface-raised);
+  --input-text: var(--foreground);
+  --input-placeholder: var(--muted);
+  --primary-color: var(--brand-500);
+  --primary-gradient: linear-gradient(135deg, var(--brand-500), var(--accent-500));
+  --btn-text: #ffffff;
+  --social-border: var(--border);
+}
+
+.auth-wrapper .app-header {
   position: absolute;
   top: 0;
   left: 0;
@@ -55,25 +44,25 @@ body {
   z-index: 10;
 }
 
-.brand {
+.auth-wrapper .brand {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.brand img {
+.auth-wrapper .brand img {
   height: 50px;
   transition: opacity 0.3s ease;
 }
 
-.brand-name {
+.auth-wrapper .brand-name {
   font-family: 'Limelight', cursive;
   font-size: 32px;
   color: var(--text-color);
   letter-spacing: 1px;
 }
 
-.theme-toggle {
+.auth-wrapper .theme-toggle {
   background: var(--container-bg);
   border: 1px solid var(--social-border);
   border-radius: 50%;
@@ -90,47 +79,46 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.theme-toggle:hover {
+.auth-wrapper .theme-toggle:hover {
   transform: scale(1.05);
 }
 
-.theme-toggle:focus-visible {
+.auth-wrapper .theme-toggle:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
-/* Container & Forms */
-.container {
+.auth-wrapper .auth-container {
   position: relative;
   width: 850px;
-  height: 550px;
+  height: 680px;
   background: var(--container-bg);
   margin: 20px;
-  margin-top: 80px; /* offset for header */
+  margin-top: 80px;
   border-radius: 30px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container h1 {
+.auth-wrapper .auth-container h1 {
   font-size: 36px;
   margin: -10px 0;
   color: var(--text-color);
 }
 
-.container p {
+.auth-wrapper .auth-container p {
   font-size: 14.5px;
   margin: 15px 0;
   color: var(--text-color);
 }
 
-form {
+.auth-wrapper form {
   width: 100%;
   margin: auto 0;
 }
 
-.form-box {
+.auth-wrapper .form-box {
   position: absolute;
   right: 0;
   width: 50%;
@@ -144,31 +132,31 @@ form {
   z-index: 1;
   transition: 0.6s ease-in-out 1.2s, visibility 0s 1s, background 0.3s ease;
   overflow-y: auto;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.form-box::-webkit-scrollbar {
+.auth-wrapper .form-box::-webkit-scrollbar {
   display: none;
 }
 
-.container.active .form-box {
+.auth-wrapper .auth-container.active .form-box {
   right: 50%;
 }
 
-.form-box.register {
+.auth-wrapper .form-box.register {
   visibility: hidden;
 }
-.container.active .form-box.register {
+.auth-wrapper .auth-container.active .form-box.register {
   visibility: visible;
 }
 
-.input-box {
+.auth-wrapper .input-box {
   position: relative;
   margin: 30px 0;
 }
 
-.input-box input {
+.auth-wrapper .input-box input {
   width: 100%;
   padding: 13px 50px 13px 20px;
   background: var(--input-bg);
@@ -181,17 +169,17 @@ form {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.input-box input::placeholder {
+.auth-wrapper .input-box input::placeholder {
   color: var(--input-placeholder);
   font-weight: 400;
 }
 
-.input-box input:focus {
+.auth-wrapper .input-box input:focus {
   outline: 2px solid var(--primary-color);
   background: var(--bg-color);
 }
 
-.input-box i {
+.auth-wrapper .input-box i {
   position: absolute;
   right: 20px;
   top: 50%;
@@ -200,15 +188,23 @@ form {
   color: var(--text-color);
 }
 
-.forgot-link {
+.auth-wrapper .forgot-link {
   margin: -15px 0 15px;
 }
-.forgot-link a {
+.auth-wrapper .forgot-link a, .auth-wrapper .forgot-link button {
   font-size: 14.5px;
   color: var(--text-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+.auth-wrapper .forgot-link button:hover {
+  text-decoration: underline;
 }
 
-.btn {
+.auth-wrapper .btn {
   width: 100%;
   height: 48px;
   background: var(--primary-gradient);
@@ -220,33 +216,46 @@ form {
   color: var(--btn-text);
   font-weight: 600;
   transition: transform 0.2s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn:active {
+.auth-wrapper .btn:active {
   transform: scale(0.98);
 }
+.auth-wrapper .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
 
-.social-icons {
+.auth-wrapper .social-icons {
   display: flex;
   justify-content: center;
 }
 
-.social-icons a {
+.auth-wrapper .social-icons button {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  padding: 10px;
-  border: 2px solid var(--social-border);
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid var(--social-border);
   border-radius: 8px;
-  font-size: 24px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text-color);
   margin: 0 8px;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-.social-icons a[title]:hover::after {
+.auth-wrapper .social-icons button[title]:hover::after {
   content: attr(title);
   position: absolute;
-  bottom: 110%; /* Places it above */
+  bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
   background: var(--text-color);
@@ -261,10 +270,10 @@ form {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.social-icons a[title]:hover::before {
+.auth-wrapper .social-icons button[title]:hover::before {
   content: "";
   position: absolute;
-  bottom: 95%; /* Little triangle pointing down */
+  bottom: 95%;
   left: 50%;
   transform: translateX(-50%);
   border-width: 5px;
@@ -273,19 +282,27 @@ form {
   pointer-events: none;
   opacity: 0.9;
 }
-.social-icons a:hover {
+.auth-wrapper .social-icons button:hover:not(:disabled) {
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
+.auth-wrapper .social-icons button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
 
 /* Toggle Panel Animation */
-.toggle-box {
+.auth-wrapper .toggle-box {
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: none; /* Let clicks pass through except for the buttons */
+}
+.auth-wrapper .toggle-box .toggle-panel {
+  pointer-events: auto;
 }
 
-.toggle-box::before {
+.auth-wrapper .toggle-box::before {
   content: "";
   position: absolute;
   left: -250%;
@@ -297,11 +314,11 @@ form {
   transition: 1.8s ease-in-out, background 0.3s ease;
 }
 
-.container.active .toggle-box::before {
+.auth-wrapper .auth-container.active .toggle-box::before {
   left: 50%;
 }
 
-.toggle-panel {
+.auth-wrapper .toggle-panel {
   position: absolute;
   width: 50%;
   height: 100%;
@@ -314,71 +331,71 @@ form {
   transition: 0.6s ease-in-out;
 }
 
-.toggle-panel h1, .toggle-panel p {
+.auth-wrapper .toggle-panel h1, .auth-wrapper .toggle-panel p {
   color: var(--btn-text);
 }
 
-.toggle-panel.toggle-left {
+.auth-wrapper .toggle-panel.toggle-left {
   left: 0;
   transition-delay: 1.2s;
 }
-.container.active .toggle-panel.toggle-left {
+.auth-wrapper .auth-container.active .toggle-panel.toggle-left {
   left: -50%;
   transition-delay: 0.6s;
 }
 
-.toggle-panel.toggle-right {
+.auth-wrapper .toggle-panel.toggle-right {
   right: -50%;
   transition-delay: 0.6s;
 }
-.container.active .toggle-panel.toggle-right {
+.auth-wrapper .auth-container.active .toggle-panel.toggle-right {
   right: 0;
   transition-delay: 1.2s;
 }
 
-.toggle-panel p {
+.auth-wrapper .toggle-panel p {
   margin-bottom: 20px;
 }
 
-.toggle-panel .btn {
+.auth-wrapper .toggle-panel .btn {
   width: 160px;
   height: 46px;
   background: transparent;
   border: 2px solid var(--btn-text);
   box-shadow: none;
 }
-.toggle-panel .btn:hover {
+.auth-wrapper .toggle-panel .btn:hover {
   background: rgba(255,255,255,0.2);
 }
 
 /* Responsive styles */
 @media screen and (max-width: 650px) {
-  .app-header {
+  .auth-wrapper .app-header {
     padding: 15px 20px;
   }
-  .brand-name {
+  .auth-wrapper .brand-name {
     font-size: 24px;
   }
-  .brand img {
+  .auth-wrapper .brand img {
     height: 40px;
   }
-  .container {
+  .auth-wrapper .auth-container {
     height: calc(100vh - 120px);
     margin-top: 100px;
   }
 
-  .form-box {
+  .auth-wrapper .form-box {
     bottom: 0;
     width: 100%;
     height: 70%;
   }
 
-  .container.active .form-box {
+  .auth-wrapper .auth-container.active .form-box {
     right: 0;
     bottom: 30%;
   }
 
-  .toggle-box::before {
+  .auth-wrapper .toggle-box::before {
     left: 0;
     top: -270%;
     width: 100%;
@@ -386,39 +403,39 @@ form {
     border-radius: 20vw;
   }
 
-  .container.active .toggle-box::before {
+  .auth-wrapper .auth-container.active .toggle-box::before {
     left: 0;
     top: 70%;
   }
 
-  .container.active .toggle-panel.toggle-left {
+  .auth-wrapper .auth-container.active .toggle-panel.toggle-left {
     left: 0;
     top: -30%;
   }
 
-  .toggle-panel {
+  .auth-wrapper .toggle-panel {
     width: 100%;
     height: 30%;
   }
-  .toggle-panel.toggle-left {
+  .auth-wrapper .toggle-panel.toggle-left {
     top: 0;
   }
-  .toggle-panel.toggle-right {
+  .auth-wrapper .toggle-panel.toggle-right {
     right: 0;
     bottom: -30%;
   }
 
-  .container.active .toggle-panel.toggle-right {
+  .auth-wrapper .auth-container.active .toggle-panel.toggle-right {
     bottom: 0;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .form-box {
+  .auth-wrapper .form-box {
     padding: 20px;
   }
 
-  .toggle-panel h1 {
+  .auth-wrapper .toggle-panel h1 {
     font-size: 30px;
   }
 }
