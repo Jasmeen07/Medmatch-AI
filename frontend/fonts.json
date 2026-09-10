@@ -1,0 +1,25 @@
+{
+  "fonts": [
+    {
+      "name": "Fascinate Inline",
+      "embedCode": "<style>\n@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');\n</style>",
+      "cssClass": ".fascinate-inline-regular {\n  font-family: \"Fascinate Inline\", system-ui;\n  font-weight: 400;\n  font-style: normal;\n}"
+    },
+    {
+      "name": "Fascinate",
+      "embedCode": "<style>\n@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');\n</style>",
+      "cssClass": ".fascinate-regular {\n  font-family: \"Fascinate\", system-ui;\n  font-weight: 400;\n  font-style: normal;\n}"
+    },
+    {
+      "name": "Uncial Antiqua",
+      "embedCode": "<style>\n@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');\n</style>",
+      "cssClass": ".uncial-antiqua-regular {\n  font-family: \"Uncial Antiqua\", system-ui;\n  font-weight: 400;\n  font-style: normal;\n}"
+    },
+    {
+      "name": "Limelight",
+      "embedCode": "<style>\n@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');\n</style>",
+      "cssClass": ".limelight-regular {\n  font-family: \"Limelight\", system-ui;\n  font-weight: 400;\n  font-style: normal;\n}"
+    }
+  ],
+  "combinedEmbedCode": "<style>\n@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Limelight&family=Uncial+Antiqua&display=swap');\n</style>"
+}
